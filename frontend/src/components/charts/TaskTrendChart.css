@@ -1,0 +1,139 @@
+.task-trend-chart {
+  background-color: var(--color-surface);
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow-convex);
+  margin-bottom: var(--spacing-lg);
+  padding: clamp(1rem, 3vw, 2rem);
+  min-width: 0;
+}
+
+.task-trend-chart__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.task-trend-chart__title {
+  margin: 0;
+  color: var(--color-on-surface);
+  font-size: clamp(1.25rem, 4vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.task-trend-chart__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.task-trend-chart__legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.task-trend-chart__legend-dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 999px;
+}
+
+.task-trend-chart__legend-dot--primary {
+  background-color: var(--color-primary);
+}
+
+.task-trend-chart__legend-dot--tertiary {
+  background-color: var(--color-tertiary);
+}
+
+.task-trend-chart__bars {
+  height: 12rem;
+  max-width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: clamp(1rem, 4vw, 3rem);
+  padding: 0 1rem;
+}
+
+.task-trend-chart__bar {
+  height: 100%;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.task-trend-chart__track {
+  width: 2rem;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  border-radius: 999px;
+  box-shadow: var(--shadow-concave);
+}
+
+.task-trend-chart__fill {
+  width: 100%;
+  border-radius: 999px;
+  background-color: var(--color-primary);
+  box-shadow: var(--shadow-convex);
+  transition: height 1s ease;
+}
+
+.task-trend-chart__fill--65 {
+  height: 65%;
+}
+
+.task-trend-chart__fill--85 {
+  height: 85%;
+}
+
+.task-trend-chart__fill--45 {
+  height: 45%;
+}
+
+.task-trend-chart__fill--95 {
+  height: 95%;
+}
+
+.task-trend-chart__fill--30 {
+  height: 30%;
+}
+
+.task-trend-chart__day {
+  color: var(--color-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .task-trend-chart {
+    padding: 1.5rem;
+    border-radius: 1rem;
+  }
+
+  .task-trend-chart__header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .task-trend-chart__bars {
+    gap: 0.75rem;
+    padding: 0;
+  }
+
+  .task-trend-chart__track {
+    width: clamp(1.35rem, 7vw, 2rem);
+  }
+}
+

@@ -1,0 +1,28 @@
+.not-found-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.not-found-page__title {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: clamp(4rem, 18vw, 7rem);
+  line-height: 1;
+}
+
+.not-found-page__message {
+  margin: 0;
+  color: var(--color-secondary);
+}
+
+.not-found-page__link {
+  color: var(--color-primary);
+  font-weight: 700;
+  text-decoration: underline;
+}
+

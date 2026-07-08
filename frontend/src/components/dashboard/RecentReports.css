@@ -1,0 +1,147 @@
+.recent-reports {
+  margin-bottom: var(--spacing-lg);
+  min-width: 0;
+}
+
+.recent-reports__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.recent-reports__title {
+  margin: 0;
+  color: var(--color-on-surface);
+  font-size: clamp(1.25rem, 4vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.recent-reports__view-all {
+  min-height: auto;
+  padding: 0.5rem;
+}
+
+.recent-reports__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.recent-reports__item {
+  display: grid;
+  grid-template-columns: 1.4fr 1.8fr 1.2fr auto;
+  align-items: center;
+  gap: 1.5rem;
+  border-radius: 1.5rem;
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-convex);
+  cursor: pointer;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  transition: transform 0.2s ease;
+  min-width: 0;
+}
+
+.recent-reports__item:hover {
+  transform: scale(1.01);
+}
+
+.recent-reports__week {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.recent-reports__date-icon {
+  width: 3rem;
+  height: 3rem;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow-concave);
+  color: var(--color-primary);
+}
+
+.recent-reports__week-title,
+.recent-reports__label,
+.recent-reports__strong,
+.recent-reports__muted,
+.recent-reports__status-line {
+  margin: 0;
+}
+
+.recent-reports__week-title,
+.recent-reports__strong {
+  color: var(--color-on-surface);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.recent-reports__label {
+  color: var(--color-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.recent-reports__muted {
+  color: var(--color-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.recent-reports__status-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.recent-reports__status-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+}
+
+.recent-reports__status-dot--approved {
+  background-color: #22c55e;
+}
+
+.recent-reports__status-dot--review {
+  background-color: #f59e0b;
+}
+
+.recent-reports__action {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 900px) {
+  .recent-reports__item {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .recent-reports__action {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .recent-reports__header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .recent-reports__item {
+    grid-template-columns: 1fr;
+    border-radius: 1rem;
+  }
+
+  .recent-reports__action,
+  .recent-reports__action .button {
+    width: 100%;
+  }
+}
+

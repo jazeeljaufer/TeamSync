@@ -1,0 +1,308 @@
+.project-management-container {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 3vw, 1.5rem);
+  min-width: 0;
+}
+
+.pm-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.pm-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-on-surface);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+  min-width: 0;
+}
+
+.project-card {
+  background: var(--color-surface-container-lowest);
+  border-radius: 20px;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: 1px solid var(--color-surface-container-highest);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-width: 0;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.project-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.project-card-header h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-on-surface);
+  min-width: 0;
+}
+
+.status-active {
+  background-color: var(--color-primary-fixed);
+  color: var(--color-primary);
+}
+
+.status-on-hold {
+  background-color: var(--color-tertiary-fixed);
+  color: var(--color-tertiary-container);
+}
+
+.status-completed {
+  background-color: var(--color-secondary-container);
+  color: var(--color-secondary);
+}
+
+.project-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.team-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-outline);
+  font-size: 0.9rem;
+}
+
+.project-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-surface-container-highest);
+}
+
+.action-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.action-btn.edit {
+  color: var(--color-primary);
+}
+.action-btn.edit:hover {
+  background-color: var(--color-primary-container);
+}
+
+.action-btn.delete {
+  color: var(--color-error);
+}
+.action-btn.delete:hover {
+  background-color: var(--color-error-container);
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(25, 28, 33, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: clamp(0.75rem, 3vw, 2rem);
+  overflow-y: auto;
+}
+
+.modal-content {
+  background-color: var(--color-surface);
+  border-radius: 24px;
+  width: min(100%, 500px);
+  max-height: min(90vh, 720px);
+  max-height: min(90dvh, 720px);
+  padding: clamp(1rem, 4vw, 2rem);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
+  animation: modalScale 0.2s ease-out;
+  overflow-y: auto;
+  min-width: 0;
+}
+
+@keyframes modalScale {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 24px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-on-surface-variant);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.close-btn:hover {
+  background-color: var(--color-surface-container-high);
+}
+
+.modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.assigned-members-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.assigned-member-tag {
+  background: var(--color-surface-container-high);
+  color: var(--color-on-surface-variant);
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-weight: 500;
+  border: 1px solid var(--color-surface-container-highest);
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.members-selection-container {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.members-checkbox-list {
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid var(--color-surface-container-highest);
+  border-radius: 12px;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--color-surface-container-lowest);
+}
+
+.member-checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--color-on-surface);
+  cursor: pointer;
+  padding: 4px 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.member-checkbox-item input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.member-email {
+  color: var(--color-outline);
+  font-size: 0.8rem;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.no-members-text {
+  font-size: 0.85rem;
+  color: var(--color-outline);
+  font-style: italic;
+}
+
+.modal-form select.input-field__input {
+  width: 100%;
+  min-height: 3rem;
+  border: 0;
+  border-radius: 0.75rem;
+  background-color: var(--color-background);
+  box-shadow: var(--shadow-concave);
+  color: var(--color-on-surface);
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+}
+
+@media (max-width: 520px) {
+  .pm-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .pm-header .button {
+    width: 100%;
+  }
+
+  .project-card,
+  .modal-content {
+    border-radius: 1rem;
+  }
+
+  .member-checkbox-item {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .modal-actions {
+    align-items: stretch;
+    flex-direction: column-reverse;
+  }
+
+  .modal-actions .button {
+    width: 100%;
+  }
+}
+

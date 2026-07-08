@@ -1,0 +1,44 @@
+.social-button {
+  width: 100%;
+  min-height: 3rem;
+  border: 0;
+  border-radius: 0.75rem;
+  background-color: var(--color-background);
+  box-shadow: var(--shadow-convex);
+  color: var(--color-secondary);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.social-button:hover {
+  background-color: var(--color-surface-container-low);
+}
+
+.social-button:active {
+  box-shadow: var(--shadow-concave);
+  transform: scale(0.98);
+}
+
+.social-button:focus-visible {
+  outline: 2px solid rgba(0, 93, 167, 0.35);
+  outline-offset: 3px;
+}
+
+.social-button__image {
+  width: 1.25rem;
+  height: 1.25rem;
+  opacity: 0.7;
+}
+
+.social-button__icon {
+  color: var(--color-secondary);
+}
+

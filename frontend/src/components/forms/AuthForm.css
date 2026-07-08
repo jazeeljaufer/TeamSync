@@ -1,0 +1,53 @@
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 3vw, 1.5rem);
+  min-width: 0;
+}
+
+.auth-form__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.auth-form__action {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  padding-top: 0.5rem;
+}
+
+.auth-form__submit {
+  width: 100%;
+  color: var(--color-primary);
+  font-size: clamp(1rem, 4vw, 1.125rem);
+  font-weight: 600;
+}
+
+.auth-form__submit:hover {
+  background-color: var(--color-surface-container-low);
+}
+
+.auth-form__status {
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.auth-form__status--success {
+  background-color: rgba(41, 118, 199, 0.1);
+  color: var(--color-primary);
+}
+
+.auth-form__status--error {
+  background-color: var(--color-error-container);
+  color: var(--color-on-error-container);
+}
+

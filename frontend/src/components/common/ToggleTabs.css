@@ -1,0 +1,50 @@
+.toggle-tabs {
+  min-height: 3.5rem;
+  display: flex;
+  border-radius: 0.75rem;
+  background-color: var(--color-surface-container-low);
+  box-shadow: var(--shadow-concave);
+  margin-bottom: var(--spacing-md);
+  padding: 0.5rem;
+  min-width: 0;
+}
+
+.toggle-tabs__button {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--color-secondary);
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25;
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    color 0.2s ease;
+}
+
+@media (max-width: 360px) {
+  .toggle-tabs {
+    padding: 0.35rem;
+  }
+
+  .toggle-tabs__button {
+    font-size: 0.8125rem;
+  }
+}
+
+.toggle-tabs__button--active {
+  background-color: var(--color-background);
+  box-shadow: var(--shadow-concave);
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.toggle-tabs__button:focus-visible {
+  outline: 2px solid rgba(0, 93, 167, 0.35);
+  outline-offset: 2px;
+}
+

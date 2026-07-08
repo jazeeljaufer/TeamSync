@@ -1,0 +1,136 @@
+.manager-dashboard-container {
+  background: var(--color-surface-container-lowest);
+  border-radius: 1.5rem;
+  padding: clamp(1rem, 3vw, 2rem);
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  min-height: 20rem;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.filters-section {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1 1 12.5rem;
+  min-width: 0;
+}
+
+.filter-group--action {
+  flex: 0 1 7.5rem;
+  justify-content: flex-end;
+}
+
+.filter-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-on-surface);
+}
+
+.filter-group input,
+.filter-group select {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid transparent;
+  background-color: var(--color-surface-container-low);
+  color: var(--color-on-surface);
+  font-family: var(--font-family);
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-small-inset);
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  background-color: var(--color-surface);
+}
+
+.filter-clear-btn {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-surface-container-highest);
+  background-color: var(--color-surface-container-high);
+  color: var(--color-on-surface);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-clear-btn:hover {
+  background-color: var(--color-surface-container);
+}
+
+.table-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.download-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  border-radius: 50%;
+  min-width: 2rem;
+  min-height: 2rem;
+  transition: background-color 0.2s ease;
+}
+
+.download-btn:hover {
+  background-color: var(--color-surface-container-high);
+}
+
+.status-late {
+  background-color: var(--color-error-container);
+  color: var(--color-on-error-container);
+}
+
+.status-pending {
+  background-color: var(--color-tertiary-fixed);
+  color: var(--color-tertiary-container);
+}
+
+@media (max-width: 768px) {
+  .filter-group {
+    flex: 1 1 100%;
+  }
+
+  .filter-group--action {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .manager-dashboard-container {
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+
+  .table-actions {
+    justify-content: flex-end;
+  }
+}
+
