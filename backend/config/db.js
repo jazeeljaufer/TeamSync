@@ -1,11 +1,14 @@
 const mongoose = require("mongoose");
 
 const connectDB = async () => {
-  try {
-    await mongoose.connect(process.env.MONGO_URI);
-  } catch (error) {
-    process.exit(1);
+  const mongoUri = process.env.MONGO_URI;
+
+  if (!mongoUri) {
+    throw new Error("MONGO_URI is not defined in the backend environment.");
   }
+
+  const connection = await mongoose.connect(mongoUri);
+  console.log(`MongoDB connected: ${connection.connection.host}`);
 };
 
 module.exports = connectDB;

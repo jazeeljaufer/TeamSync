@@ -123,7 +123,7 @@ const tools = [
 const generateSummary = async (reports, question) => {
   try {
     const model = genAI.getGenerativeModel({
-      model: "gemini-3.5-flash",
+      model: "gemini-2.5-flash",
     });
 
     let prompt = `
@@ -200,13 +200,13 @@ The current local date and time is: ${new Date().toString()}.
 `;
 
     const model = genAI.getGenerativeModel({
-      model: "gemini-3.5-flash",
+      model: "gemini-2.5-flash",
       tools: tools,
       systemInstruction: systemInstruction,
     });
 
     const formattedHistory = history.map(h => ({
-      role: h.sender === "user" ? "user" : "model",
+      role: h.sender === "user" ? "user" : (h.sender === "system" ? "system" : "assistant"),
       parts: [{ text: h.text }]
     }));
 
